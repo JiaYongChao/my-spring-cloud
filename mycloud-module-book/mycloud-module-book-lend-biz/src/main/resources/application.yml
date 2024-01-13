@@ -73,18 +73,18 @@ xxl:
       logpath: ${user.home}/logs/xxl-job/${spring.application.name} # 执行器运行日志文件存储磁盘路径
     accessToken: default_token # 执行器通讯TOKEN
 
---- #################### 相关配置 ####################
+--- #################### 芋道相关配置 ####################
 
 mycloud:
   info:
     version: 1.0.0
-    base-package:  com.jyc.cloud.module.book
+    base-package:  com.jyc.cloud.module.book.lend
   web:
     admin-ui:
       url: http://dashboard.mycloud.iocoder.cn # Admin 管理后台 UI 的地址
   swagger:
-    title: 图书管理
-    description: 提供图书管理的所有功能
+    title: 图书借阅
+    description: 提供图书借阅管理的所有功能
     version: ${mycloud.info.version}
     base-package: ${mycloud.info.base-package}
 

@@ -13,6 +13,10 @@
     <modules>
         <module>mycloud-module-book-api</module>
         <module>mycloud-module-book-biz</module>
+        <module>mycloud-module-book-lend-api</module>
+        <module>mycloud-module-book-lend-biz</module>
+        <module>mycloud-module-book-user-api</module>
+        <module>mycloud-module-book-user-biz</module>
     </modules>
 
     <properties>

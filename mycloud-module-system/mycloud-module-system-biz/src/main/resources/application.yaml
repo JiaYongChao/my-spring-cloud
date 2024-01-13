@@ -50,9 +50,6 @@ mybatis-plus:
   global-config:
     db-config:
       id-type: NONE # “智能”模式，基于 IdTypeEnvironmentPostProcessor + 数据源的类型，自动适配成 AUTO、INPUT 模式。
-      #      id-type: AUTO # 自增 ID，适合 MySQL 等直接自增的数据库
-      #      id-type: INPUT # 用户输入 ID，适合 Oracle、PostgreSQL、Kingbase、DB2、H2 数据库
-      #      id-type: ASSIGN_ID # 分配 ID，默认使用雪花算法。注意，Oracle、PostgreSQL、Kingbase、DB2、H2 数据库时，需要去除实体类上的 @KeySequence 注解
       logic-delete-value: 1 # 逻辑已删除值(默认为 1)
       logic-not-delete-value: 0 # 逻辑未删除值(默认为 0)
     banner: false # 关闭控制台的 Banner 打印
@@ -141,7 +138,7 @@ mycloud:
     version: ${mycloud.info.version}
     base-package: ${mycloud.info.base-package}
   captcha:
-    enable: true # 验证码的开关，默认为 true；
+    enable: false # 验证码的开关，默认为 true；
   error-code: # 错误码相关配置项
     constants-class-list:
       - com.jyc.cloud.module.system.enums.ErrorCodeConstants
@@ -156,11 +153,5 @@ mycloud:
       - system_sensitive_word
       - system_oauth2_client
       - system_notify_template
-  sms-code: # 短信验证码相关的配置项
-    expire-times: 10m
-    send-frequency: 1m
-    send-maximum-quantity-per-day: 10
-    begin-code: 9999 # 这里配置 9999 的原因是，测试方便。
-    end-code: 9999 # 这里配置 9999 的原因是，测试方便。
 
 debug: false

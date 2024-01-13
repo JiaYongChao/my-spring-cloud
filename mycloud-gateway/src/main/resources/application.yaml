@@ -50,6 +50,32 @@ spring:
             - Path=/app-api/book/**
           filters:
             - RewritePath=/app-api/book/v3/api-docs, /v3/api-docs
+        ## book-lend-server 服务
+        - id: book-lend-admin-api # 路由的编号
+          uri: grayLb://book-lend-server
+          predicates: # 断言，作为路由的匹配条件，对应 RouteDefinition 数组
+            - Path=/admin-api/book/lend/**
+          filters:
+            - RewritePath=/admin-api/book/lend/v3/api-docs, /v3/api-docs
+        - id: book-lend-app-api # 路由的编号
+          uri: grayLb://book-lend-server
+          predicates: # 断言，作为路由的匹配条件，对应 RouteDefinition 数组
+            - Path=/app-api/book/lend/**
+          filters:
+            - RewritePath=/app-api/book/lend/v3/api-docs, /v3/api-docs
+        ## book-user-server 服务
+        - id: book-user-admin-api # 路由的编号
+          uri: grayLb://book-user-server
+          predicates: # 断言，作为路由的匹配条件，对应 RouteDefinition 数组
+            - Path=/admin-api/book/user/**
+          filters:
+            - RewritePath=/admin-api/book/user/v3/api-docs, /v3/api-docs
+        - id: book-user-app-api # 路由的编号
+          uri: grayLb://book-user-server
+          predicates: # 断言，作为路由的匹配条件，对应 RouteDefinition 数组
+            - Path=/app-api/book/user/**
+          filters:
+            - RewritePath=/app-api/book/user/v3/api-docs, /v3/api-docs
 
       x-forwarded:
         prefix-enabled: false # 避免 Swagger 重复带上额外的 /admin-api/system 前缀
@@ -68,3 +94,9 @@ knife4j:
       - name: book-server
         service-name: book-server
         url: /admin-api/book/v3/api-docs
+      - name: book-lend-server
+        service-name: book-lend-server
+        url: /admin-api/book/lend/v3/api-docs
+      - name: book-user-server
+        service-name: book-user-server
+        url: /admin-api/book/user/v3/api-docs

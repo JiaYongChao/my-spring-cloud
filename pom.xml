@@ -17,8 +17,7 @@
     </modules>
 
     <name>${project.artifactId}</name>
-    <description>芋道项目基础脚手架</description>
-    <url>https://github.com/YunaiV/ruoyi-vue-pro</url>
+    <description>项目基础脚手架</description>
 
     <properties>
         <revision>2.0.0-jdk8-snapshot</revision>

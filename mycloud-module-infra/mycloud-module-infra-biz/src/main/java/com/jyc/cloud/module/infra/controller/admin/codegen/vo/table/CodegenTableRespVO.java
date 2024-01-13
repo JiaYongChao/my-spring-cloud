@@ -18,7 +18,7 @@ public class CodegenTableRespVO {
     @Schema(description = "表名称", requiredMode = Schema.RequiredMode.REQUIRED, example = "mycloud")
     private String tableName;
 
-    @Schema(description = "表描述", requiredMode = Schema.RequiredMode.REQUIRED, example = "芋道")
+    @Schema(description = "表描述", requiredMode = Schema.RequiredMode.REQUIRED, example = "项目")
     private String tableComment;
 
     @Schema(description = "备注", example = "我是备注")

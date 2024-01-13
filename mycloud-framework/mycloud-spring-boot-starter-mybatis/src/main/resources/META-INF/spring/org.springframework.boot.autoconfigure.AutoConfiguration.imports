@@ -1,0 +1,2 @@
+com.jyc.cloud.framework.datasource.config.MycloudDataSourceAutoConfiguration
+com.jyc.cloud.framework.mybatis.config.MycloudMybatisAutoConfiguration

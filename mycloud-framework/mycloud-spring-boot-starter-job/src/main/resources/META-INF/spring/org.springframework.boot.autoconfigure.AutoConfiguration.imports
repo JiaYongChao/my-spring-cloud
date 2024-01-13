@@ -1,0 +1,2 @@
+com.jyc.cloud.framework.quartz.config.MycloudXxlJobAutoConfiguration
+com.jyc.cloud.framework.quartz.config.MycloudAsyncAutoConfiguration

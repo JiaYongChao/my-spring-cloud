@@ -1,0 +1,2 @@
+com.jyc.cloud.framework.tracer.config.MycloudTracerAutoConfiguration
+com.jyc.cloud.framework.tracer.config.MycloudMetricsAutoConfiguration

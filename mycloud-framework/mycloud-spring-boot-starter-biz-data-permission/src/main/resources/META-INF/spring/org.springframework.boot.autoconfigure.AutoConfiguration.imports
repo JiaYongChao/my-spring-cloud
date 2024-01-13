@@ -1,0 +1,2 @@
+com.jyc.cloud.framework.datapermission.config.MycloudDataPermissionAutoConfiguration
+com.jyc.cloud.framework.datapermission.config.MycloudDeptDataPermissionAutoConfiguration

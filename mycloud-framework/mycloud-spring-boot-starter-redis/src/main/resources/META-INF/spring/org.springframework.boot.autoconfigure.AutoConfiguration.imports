@@ -1,0 +1,2 @@
+com.jyc.cloud.framework.redis.config.MycloudRedisAutoConfiguration
+com.jyc.cloud.framework.redis.config.MycloudCacheAutoConfiguration

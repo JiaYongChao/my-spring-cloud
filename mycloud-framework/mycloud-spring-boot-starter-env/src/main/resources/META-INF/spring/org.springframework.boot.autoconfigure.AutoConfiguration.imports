@@ -1,0 +1,2 @@
+com.jyc.cloud.framework.env.config.MycloudEnvWebAutoConfiguration
+com.jyc.cloud.framework.env.config.MycloudEnvRpcAutoConfiguration

@@ -1,0 +1,3 @@
+com.jyc.cloud.framework.mq.redis.config.MycloudRedisMQProducerAutoConfiguration
+com.jyc.cloud.framework.mq.redis.config.MycloudRedisMQConsumerAutoConfiguration
+com.jyc.cloud.framework.mq.rabbitmq.config.MycloudRabbitMQAutoConfiguration

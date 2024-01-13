@@ -1,0 +1,2 @@
+com.jyc.cloud.framework.idempotent.config.MycloudIdempotentConfiguration
+com.jyc.cloud.framework.lock4j.config.MycloudLock4jConfiguration

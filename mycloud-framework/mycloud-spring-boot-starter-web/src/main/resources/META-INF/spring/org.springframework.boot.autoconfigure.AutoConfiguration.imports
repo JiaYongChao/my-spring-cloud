@@ -1,0 +1,5 @@
+com.jyc.cloud.framework.apilog.config.MycloudApiLogAutoConfiguration
+com.jyc.cloud.framework.jackson.config.MycloudJacksonAutoConfiguration
+com.jyc.cloud.framework.swagger.config.MycloudSwaggerAutoConfiguration
+com.jyc.cloud.framework.web.config.MycloudWebAutoConfiguration
+com.jyc.cloud.framework.apilog.config.MycloudApiLogRpcAutoConfiguration

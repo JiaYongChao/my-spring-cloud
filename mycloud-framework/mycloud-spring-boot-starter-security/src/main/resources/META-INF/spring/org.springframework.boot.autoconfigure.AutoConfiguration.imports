@@ -1,0 +1,3 @@
+com.jyc.cloud.framework.security.config.MycloudSecurityRpcAutoConfiguration
+com.jyc.cloud.framework.security.config.MycloudSecurityAutoConfiguration
+com.jyc.cloud.framework.security.config.MycloudWebSecurityConfigurerAdapter

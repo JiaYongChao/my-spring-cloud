@@ -201,11 +201,6 @@
                 <artifactId>mycloud-spring-boot-starter-mybatis</artifactId>
                 <version>${revision}</version>
             </dependency>
-            <dependency>
-                <groupId>org.springdoc</groupId>
-                <artifactId>springdoc-openapi-webflux-ui</artifactId>
-                <version>${springdoc.version}</version>
-            </dependency>
 
             <dependency>
                 <groupId>com.alibaba</groupId>
@@ -418,12 +413,6 @@
                 <version>${podam.version}</version>
             </dependency>
 
-            <!-- 工作流相关 -->
-            <dependency>
-                <groupId>com.jyc.cloud</groupId>
-                <artifactId>mycloud-spring-boot-starter-flowable</artifactId>
-                <version>${revision}</version>
-            </dependency>
             <dependency>
                 <groupId>org.flowable</groupId>
                 <artifactId>flowable-spring-boot-starter-process</artifactId>
@@ -529,11 +518,6 @@
                 <version>${guava.version}</version>
             </dependency>
 
-            <dependency>
-                <groupId>com.google.inject</groupId>
-                <artifactId>guice</artifactId>
-                <version>${guice.version}</version>
-            </dependency>
 
             <dependency>
                 <groupId>com.alibaba</groupId>

@@ -1,5 +1,6 @@
 package com.jyc.cloud.module.book.service.book;
 
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.google.common.annotations.VisibleForTesting;
 import com.jyc.cloud.framework.common.pojo.PageResult;
 import com.jyc.cloud.framework.common.util.object.BeanUtils;
@@ -7,7 +8,6 @@ import com.jyc.cloud.module.book.controller.admin.book.vo.BookPageReqVO;
 import com.jyc.cloud.module.book.controller.admin.book.vo.BookSaveReqVO;
 import com.jyc.cloud.module.book.dal.dataobject.book.BookDO;
 import com.jyc.cloud.module.book.dal.mysql.book.BookMapper;
-import com.jyc.cloud.module.book.mq.message.BookLendMessage;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
@@ -15,6 +15,8 @@ import org.springframework.validation.annotation.Validated;
 import javax.annotation.Resource;
 
 import java.time.LocalDateTime;
+import java.util.HashMap;
+import java.util.Map;
 
 import static com.jyc.cloud.framework.common.exception.util.ServiceExceptionUtil.exception;
 import static com.jyc.cloud.module.system.enums.ErrorCodeConstants.NOTICE_NOT_FOUND;
@@ -69,15 +71,16 @@ public class BookServiceImpl implements  BookService {
     }
 
     @Override
-    public boolean updateBookInfo(BookLendMessage message) {
+    public boolean updateBookInfo(BookDO bookDO) {
 
-        Long bookId = message.getBookId();
-        BookDO oldbookDO = bookMapper.selectById(bookId);
-        BookDO bookDO = new BookDO();
-        bookDO.setBookId(bookId);
-        bookDO.setBookStock(oldbookDO.getBookStock()-1);
-        bookDO.setStatus(1);
-        bookMapper.updateById(bookDO);
+        Long bookId = bookDO.getBookId();
+        BookDO oldbookDO = bookMapper.selectOne("book_id",bookId);
+        oldbookDO.setBookStock(oldbookDO.getBookStock()-1);
+        oldbookDO.setStatus(1);
+        // 作为查询条件
+        UpdateWrapper<BookDO> updateWrapper = new UpdateWrapper<>();
+        updateWrapper.eq("book_id", bookId);
+        bookMapper.update(oldbookDO,updateWrapper);
         return true;
     }
 

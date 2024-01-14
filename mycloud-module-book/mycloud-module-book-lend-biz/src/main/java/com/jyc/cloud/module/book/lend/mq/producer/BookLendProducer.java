@@ -1,13 +1,15 @@
 package com.jyc.cloud.module.book.lend.mq.producer;
 
 import com.jyc.cloud.framework.common.core.KeyValue;
-import com.jyc.cloud.module.book.lend.mq.message.BookLendMessage;
+import com.jyc.cloud.framework.common.util.json.JsonUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @ClassNAME BookProducer
@@ -24,9 +26,10 @@ public class BookLendProducer {
 
 
     public void sendLendBookMessage(Long userId,Long bookId) {
-        BookLendMessage message = new BookLendMessage();
-        message.setUserId(userId);
-        message.setBookId(bookId);
-        kafkaTemplate.send(BookLendMessage.TOPIC, message); // 重点：使用 KafkaTemplate 发送消息
+        Map<String,Object> map = new HashMap<>();
+        map.put("bookId",bookId);
+        map.put("userId",userId);
+        String josnMessage = JsonUtils.toJsonString(map);
+        kafkaTemplate.send("BOOK_LEND_TOPIC", josnMessage); // 重点：使用 KafkaTemplate 发送消息
     }
 }

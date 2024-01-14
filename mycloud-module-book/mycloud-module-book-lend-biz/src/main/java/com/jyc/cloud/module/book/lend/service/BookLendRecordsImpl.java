@@ -48,7 +48,7 @@ public class BookLendRecordsImpl implements BookLendRecordsService {
     public boolean userBorrowingBook(BookLendSaveVO bookLendSaveVO) {
         Long bookId = bookLendSaveVO.getBookId();
         //检查该书是否可借,从借书记录表中查询该书是否已借出
-        List<BookLendRecordsDO> list = bookLendRecordsMapper.selectList("bookId", bookId);
+        List<BookLendRecordsDO> list = bookLendRecordsMapper.selectList("book_id", bookId);
         if (list.size() > 0) {
             return false;
         }

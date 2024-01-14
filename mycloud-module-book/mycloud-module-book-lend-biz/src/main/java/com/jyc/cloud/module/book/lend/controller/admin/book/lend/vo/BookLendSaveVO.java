@@ -36,8 +36,7 @@ public class BookLendSaveVO extends BaseDO {
     /**
      * 借阅天数
      */
-    @Schema(description = "借阅天数", requiredMode = Schema.RequiredMode.REQUIRED, example = "小博主")
-    @NotBlank(message = "借阅天数不能为空")
+    @Schema(description = "借阅天数", requiredMode = Schema.RequiredMode.REQUIRED, example = "12")
     private Integer days;
 
 

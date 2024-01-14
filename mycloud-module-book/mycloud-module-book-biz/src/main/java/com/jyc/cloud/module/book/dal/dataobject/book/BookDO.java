@@ -1,6 +1,7 @@
 package com.jyc.cloud.module.book.dal.dataobject.book;
 
 import com.baomidou.mybatisplus.annotation.KeySequence;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.jyc.cloud.framework.mybatis.core.dataobject.BaseDO;
 import lombok.Data;
@@ -24,6 +25,7 @@ public class BookDO extends BaseDO {
     /**
      * 图书ID
      */
+    @TableId
     private Long bookId;
 
     /**

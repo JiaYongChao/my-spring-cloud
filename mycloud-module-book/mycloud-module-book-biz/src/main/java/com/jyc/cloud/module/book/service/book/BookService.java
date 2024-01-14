@@ -4,7 +4,6 @@ import com.jyc.cloud.framework.common.pojo.PageResult;
 import com.jyc.cloud.module.book.controller.admin.book.vo.BookPageReqVO;
 import com.jyc.cloud.module.book.controller.admin.book.vo.BookSaveReqVO;
 import com.jyc.cloud.module.book.dal.dataobject.book.BookDO;
-import com.jyc.cloud.module.book.mq.message.BookLendMessage;
 
 /**
  * @ClassNAME BookService
@@ -60,5 +59,5 @@ public interface BookService {
      * @param: [message]
      * @return: boolean
      **/
-    boolean updateBookInfo(BookLendMessage message);
+    boolean updateBookInfo(BookDO bookDO);
 }
